@@ -29,11 +29,11 @@ export class MyDatabase {
 }
 ```
 
-2. Define config provider in Mesh:
+2. Define `Config` provider in Mesh:
 
 ```ts
 mesh.service(MyDatabase);
-mesh.service(ConfigProvider, ProcessEnvConfigProvider);
+mesh.service(Config, ProcessEnvConfig);
 ```
 
 3. Now `DATABASE_*` values will be read from `process.env`.

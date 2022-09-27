@@ -33,11 +33,11 @@ export function config(options: ConfigOptions = {}) {
         Object.defineProperty(prototype, key, {
             get() {
                 const mesh = (this as any)[MESH_REF] as Mesh;
-                if (mesh instanceof Mesh) {
-                    const config = mesh.resolve(Config);
-                    config.get(key, type, defaultValue);
+                if (!(mesh instanceof Mesh)) {
+                    throw new ConfigError(`Could not read @config: ${prototype.constructor.name} not connected to Mesh`);
                 }
-                throw new ConfigError(`Could not read @config: ${prototype.constructor.name} not connected to Mesh`);
+                const config = mesh.resolve(Config);
+                return config.get(key, type, defaultValue);
             }
         });
     };
@@ -110,12 +110,12 @@ export abstract class Config {
 
 }
 
-export class ProcessEnvConfig extends Config {
-    map: Map<string, string> = new Map();
+export class MapConfig extends Config {
+    map = new Map<string, string>();
 
-    constructor() {
+    constructor(entries: Iterable<readonly [string, string | null | undefined]> = []) {
         super();
-        for (const [k, v] of Object.entries(process.env)) {
+        for (const [k, v] of entries) {
             if (v != null) {
                 this.map.set(k, v);
             }
@@ -124,6 +124,12 @@ export class ProcessEnvConfig extends Config {
 
     resolve(key: string): string | null {
         return this.map.get(key) ?? null;
+    }
+}
+
+export class ProcessEnvConfig extends MapConfig {
+    constructor() {
+        super(Object.entries(process.env));
     }
 }
 
