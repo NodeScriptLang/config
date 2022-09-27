@@ -4,9 +4,10 @@ Declarative configuration framework for [Mesh IoC](https://github.com/inca/mesh-
 
 ## Highlights
 
-- ✨ Declarative
-- 🗜 Small footprint
-- 🔬 Introspectable
+- 🔥 Zero dependencies
+- 🗜 Tidy and compact
+- 💻 Works in browser
+- 🔬 Strongly typed and introspectable
 - 🌳 Ergonomic
 
 ## Usage
