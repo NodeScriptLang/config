@@ -1,6 +1,6 @@
 # Configuration Microframework
 
-Declarative configuration framework for [Mesh IoC](https://github.com/inca/mesh-ioc).
+Declarative configuration framework for [Mesh IoC](https://github.com/flexent/mesh).
 
 ## Highlights
 

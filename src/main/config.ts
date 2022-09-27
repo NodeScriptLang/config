@@ -1,6 +1,6 @@
 import { Exception } from '@flexent/exception';
+import { Mesh, MESH_REF } from '@flexent/mesh';
 import { addClassMetadata, getClassMetadata } from '@flexent/reflect';
-import { Mesh, MESH_REF } from 'mesh-ioc';
 
 export const CONFIG_REF = Symbol('flexent:CONFIG_REF');
 
