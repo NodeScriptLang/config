@@ -1,4 +1,4 @@
-import { Mesh } from '@flexent/mesh';
+import { Mesh } from '@nodescript/mesh';
 import assert from 'assert';
 
 import { Config, config, MapConfig } from '../main/config.js';

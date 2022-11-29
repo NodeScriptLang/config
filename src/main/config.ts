@@ -1,8 +1,8 @@
-import { Exception } from '@flexent/exception';
-import { Mesh, MESH_REF } from '@flexent/mesh';
-import { addClassMetadata, getClassMetadata } from '@flexent/reflect';
+import { Exception } from '@nodescript/exception';
+import { Mesh, MESH_REF } from '@nodescript/mesh';
+import { addClassMetadata, getClassMetadata } from '@nodescript/reflect';
 
-export const CONFIG_REF = Symbol('flexent:CONFIG_REF');
+export const CONFIG_REF = Symbol('nodescript:CONFIG_REF');
 
 export type ConfigType = string | boolean | number;
 export type ConfigParser<T> = (str: string) => T | null;
