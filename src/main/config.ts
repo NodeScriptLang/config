@@ -1,4 +1,3 @@
-import { Exception } from '@nodescript/exception';
 import { Mesh, MESH_REF } from '@nodescript/mesh';
 import { addClassMetadata, getClassMetadata } from '@nodescript/reflect';
 
@@ -146,4 +145,6 @@ function parseBoolean(str: string): boolean | null {
     return str === 'true';
 }
 
-export class ConfigError extends Exception {}
+export class ConfigError extends Error {
+    override name = this.constructor.name;
+}
