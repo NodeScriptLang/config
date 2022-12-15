@@ -1,6 +1,6 @@
 # Configuration Microframework
 
-Declarative configuration framework for [Mesh IoC](https://github.com/nodescript/mesh).
+Declarative configuration framework for [Mesh IoC](https://github.com/MeshIoC/mesh-ioc).
 
 ## Highlights
 
