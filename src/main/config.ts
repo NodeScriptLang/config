@@ -1,5 +1,5 @@
-import { Mesh, MESH_REF } from '@nodescript/mesh';
 import { addClassMetadata, getClassMetadata } from '@nodescript/reflect';
+import { Mesh, MESH_REF } from 'mesh-ioc';
 
 export const CONFIG_REF = Symbol('nodescript:CONFIG_REF');
 
